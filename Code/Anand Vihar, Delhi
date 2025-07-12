@@ -1,1 +1,128 @@
+import matplotlib.pyplot as plt
 
+years = [2020, 2021, 2022, 2023, 2024]
+pm10_avg = [206.39, 274.02, 317.32, 295.52, 313.96]
+pm10_std = [60, 60, 60, 60, 60]
+
+plt.figure(figsize=(12,6))
+plt.plot(years, pm10_avg, marker='o', linestyle='-', color='#e34a33', label="Avg. PM10 Conc.")
+
+plt.title('Anand Vihar PM10 Trends (2020–2024)', fontweight='bold')
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('Avg. PM10 Concentration (µg/m³)', fontsize=12)
+plt.axhline(y=60, color='green', linestyle='--', label='NAAQS Limit : 60µg/m³')
+plt.axhline(y=15, color='blue', linestyle='--', label='WHO Limit : 15µg/m³')
+
+# Add value labels above each data point
+for year, pm10 in zip(years, pm10_avg):
+    plt.text(year, pm10 + 10, f'{pm10:.2f}', ha='center', fontsize=9, color='#e34a33')
+
+plt.grid(True, alpha=0.3)
+plt.xticks(years)
+plt.legend()
+plt.ylim(top=350)  # Set the upper y-axis limit here
+plt.tight_layout()
+plt.show()
+
+###########################################
+
+import matplotlib.pyplot as plt
+
+years = [2020, 2021, 2022, 2023, 2024]
+pm25_avg = [114.57, 128.69, 124.15, 127.81, 136.04]
+
+plt.figure(figsize=(10,6))
+plt.plot(years, pm25_avg, marker='o', linestyle='-', color='#ff6666', label='Avg. PM2.5 Conc.')
+plt.title('Anand Vihar PM2.5 Trends (2020–2024)', fontweight='bold')
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('Avg. PM2.5 Concentration (µg/m³)', fontsize=12)
+plt.axhline(y=40, color='green', linestyle='--', label='NAAQS Limit : 40µg/m³')
+plt.axhline(y=5, color='blue', linestyle='--', label='WHO Limit : 5µg/m³')
+
+# Add value labels above each data point
+for year, pm25 in zip(years, pm25_avg):
+    plt.text(year, pm25 + 3, f'{pm25:.2f}', ha='center', fontsize=9, color='#ff6666')
+
+plt.grid(True, alpha=0.3)
+plt.xticks(years)
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+############################################
+
+import matplotlib.pyplot as plt
+
+years = [2020, 2021, 2022, 2023, 2024]
+so2 = [14.34, 17.01, 21.51, 13.81, 17.74]
+
+plt.figure(figsize=(10,6))
+plt.plot(years, so2, marker='o', color='#ff7f0e', label='Avg. SO2 Conc.')
+plt.title('Anand Vihar SO₂ Trend (2020–2024)', fontweight='bold')
+plt.xlabel('Year')
+plt.ylabel('Avg. SO₂ Concentration (µg/m³)')
+plt.xticks(years)
+plt.axhline(y=50, color='green', linestyle=':', label='NAAQS Limit ')
+plt.axhline(y=40, color='blue', linestyle=':', label='WHO Limit')
+
+# Add value labels above each data point
+for year, val in zip(years, so2):
+    plt.text(year, val + 1, f'{val:.2f}', ha='center', fontsize=9, color='#ff7f0e')
+
+plt.grid(alpha=0.3)
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+##################################################
+
+import matplotlib.pyplot as plt
+
+years = [2020, 2021, 2022, 2023, 2024]
+no2_avg = [59.9, 74.79, 82.34, 76.34, 79.91]
+
+plt.figure(figsize=(10,6))
+plt.plot(years, no2_avg, marker='o', linestyle='-', color='red', label='Avg. NO2 Conc.')
+plt.title('Anand Vihar NO₂ Trends (2020–2024)', fontweight='bold')
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('Avg. NO₂ Concentration (µg/m³)', fontsize=12)
+plt.axhline(y=40, color='green', linestyle=':', label='NAAQS Limit : 40µg/m³')
+plt.axhline(y=10, color='blue', linestyle=':', label='WHO Limit : 10µg/m³')
+
+# Add value labels above each data point
+for year, no2 in zip(years, no2_avg):
+    plt.text(year, no2 + 2, f'{no2:.2f}', ha='center', fontsize=9, color='red')
+
+
+
+plt.grid(True, alpha=0.3)
+plt.xticks(years)
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+##################################################
+
+import matplotlib.pyplot as plt
+
+years = [2020, 2021, 2022, 2023, 2024]
+o3_avg = [43.97, 27.86, 35.55, 17.82, 43.41]
+
+plt.figure(figsize=(10,6))
+plt.plot(years, o3_avg, marker='s', linestyle='-', color='red', label='Avg. O3 Conc.')
+plt.title('Anand Vihar O₃ Trends (2020–2024)', fontweight='bold')
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('Avg. 8 hour O₃ Concentration (µg/m³)', fontsize=12)
+plt.axhline(y=100, color='green', linestyle='--', label='NAAQS Limit : 100 µg/m³')
+plt.axhline(y=60, color='blue', linestyle='--', label='WHO Limit : 60 µg/m³')
+
+# Add value labels above each data point
+for year, o3 in zip(years, o3_avg):
+    plt.text(year, o3 + 3, f'{o3:.2f}', ha='center', fontsize=9, color='red')
+
+
+plt.grid(True, alpha=0.3)
+plt.xticks(years)
+plt.legend()
+plt.tight_layout()
+plt.show()
